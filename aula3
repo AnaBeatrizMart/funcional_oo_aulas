@@ -1,0 +1,182 @@
+# Ana
+
+###################################
+
+# 1) Criar dois vetores de tamanho 5.
+
+x <- c(26, 09, 19, 60, 13)
+y <- 1:5
+
+#soma a raiz quadrada do primeiro com o segundo 
+#elevado ao cubo
+
+sqrt(x)+y^3
+
+
+# crie um banco de dados com os nomes de todos os animais
+# de estimação que você já teve
+
+# obs.: no seu banco de dados deverá haver
+# Nome, idade, especie,
+# alimentação/semana (kg) - numeric
+
+################
+
+my_farm <- 
+  
+NOME <- c ("Harry", "Noah", "Minerva", "Tonks", "Meredith")
+
+IDADES <- c (3L, 4L, 7L, 6L, 2L)
+
+ESPECIE <- c ("cachorro", "gato", "gato", "coelho", "gato")
+
+ALIMENTAÇÃO <- c (5, 2, 2, 3, 1.5)
+
+my_farm <- data.frame(nome, idades, especie, alimentação, 
+                      stringAsfactors = F)
+
+#################################################
+
+
+my_farm
+class(my_farm) # classe do objeto
+dim(my_farm) # Dimensões do objeto
+
+str(my_farm)
+
+my_farm$especie <- as.factor(my_farm$especie)
+str(my_farm)
+
+
+##########################################
+
+
+# Subsetting
+# Selecionando pedaços
+
+# Data.frames
+# $
+
+my_farm$idades
+class(my_farm$idades)
+
+########################################################
+
+
+# Usando []
+
+my_farm[2]
+
+class (my_farm[2]) # Retorna objeto de classe data.frame
+
+my_farm[[2]]
+
+class(my_farm[[2]]) # Retorna classe da variavel
+
+# [linha, coluna]
+
+my_farm
+
+my_farm [2, 3]
+
+class(my_farm[2, 3])
+
+my_farm[1, ] # Retorna a linha 1
+
+class(my_farm[1, ]) # Classe é data.frame
+
+my_farm[ ,4] # Retorna a coluna 4
+
+class(my_farm[ ,4])
+
+# Subsetting linhas 1 e 2, coluna 3
+
+my_farm[1:2, 4]
+
+# Subsetting linha 3, colunas 2, 3 e 4
+
+my_farm[3, 2:4]
+
+# Subsetting linhas 1 e 4, colunas 2 e 4
+
+my_farm[c(1, 4), c(2,4)]
+
+#########################################################
+
+# listas
+
+# Lista é um objeto que pode conter qualquer outro dentro
+# dela.
+
+ls()
+
+a <- matrix(data = 1:10, nrow=5, ncol=2)
+
+a
+
+print(a)
+
+
+lista <- list (NOME, idades, a, my_farm)
+
+lista
+
+# subsetting na lista
+# []
+
+lista[3]
+
+class(lista[3])
+
+# subsetting na lista, faça um subsetting do elemento que
+# está na quarta linha, segunda coluna da matriz
+
+lista[[3]][4, 2]
+
+
+# Dentro da lista obtenha o elemento que está na terceira
+# linha, na coluna 2 do data.frame
+
+lista[[4]] [3, 2]
+
+class(lista)
+
+class(lista[[4]] [3, 2])
+
+
+###########################################################
+
+# Visualizar um banco de dados
+
+my_farm
+
+View(my_farm)
+
+########################################################
+
+# tirando as classes da lista
+
+lista
+
+class(lista [[1]])
+class (lista [[2]])
+class (lista [[3]])
+class (lista [[4]])
+
+
+lapply(lista, class)
+
+classes <- lapply(lista, class)
+
+classes
+
+########################################################
+
+# missing data
+
+idades <- c(20, 22, NA)
+
+print(idades)
+
+0/0 # não é um numero
+
